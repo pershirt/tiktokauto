@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - TikTok Clipper</title>
+<meta name="tiktok-developers-site-verification" content="bJ9BNYHsvhNM1hPFradB2EJHw7KHGxJs">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#0a0a0f;color:#e0e0e0;line-height:1.8}
+.hero{background:linear-gradient(135deg,#0a1a2e 0%,#1a0a2e 50%,#0f0f1a 100%);padding:80px 20px 60px;text-align:center;border-bottom:1px solid #2a2a3a}
+.hero h1{font-size:42px;font-weight:800;background:linear-gradient(135deg,#25f4ee,#ff2d55);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+.hero .subtitle{color:#888;font-size:16px}
+.container{max-width:900px;margin:0 auto;padding:60px 24px}
+h2{font-size:24px;color:#25f4ee;margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid #1a2a3a}
+p,li{color:#b0b0b8;font-size:15px;margin-bottom:12px}
+ul{padding-left:24px}
+li{margin-bottom:8px}
+strong{color:#e0e0e8}
+.highlight{background:#1a1a2a;border-left:4px solid #ff2d55;padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0}
+table{width:100%;border-collapse:collapse;margin:20px 0}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid #1a2a3a;font-size:14px}
+th{color:#25f4ee;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+td{color:#b0b0b8}
+footer{text-align:center;padding:40px;color:#555;font-size:13px;border-top:1px solid #1a1a2a}
+</style>
+</head>
+<body>
+<div class="hero">
+<h1>Privacy Policy</h1>
+<p class="subtitle">TikTok Clipper — Your data, your control</p>
+</div>
+<div class="container">
+
+<h2>1. Overview</h2>
+<p>TikTok Clipper is a locally-running application. We are committed to protecting your privacy. This policy explains what data is collected, how it is used, and your rights.</p>
+
+<div class="highlight">
+<strong>Key principle:</strong> TikTok Clipper runs entirely on your local machine. No video content, personal data, or API credentials are sent to any external server other than the official YouTube and TikTok APIs.
+</div>
+
+<h2>2. Data Collection</h2>
+
+<table>
+<thead><tr><th>Data Type</th><th>Purpose</th><th>Stored</th><th>Shared</th></tr></thead>
+<tbody>
+<tr><td><strong>YouTube video data</strong><br>(title, URL, thumbnail)</td><td>Identify trending videos for clipping</td><td>Local cache (JSON)</td><td>No</td></tr>
+<tr><td><strong>Downloaded video files</strong></td><td>Process and cut highlight clips</td><td>Local disk (data/videos/)</td><td>No</td></tr>
+<tr><td><strong>Audio transcriptions</strong></td><td>Detect highlight moments and generate subtitles</td><td>Local disk (data/jobs/)</td><td>No</td></tr>
+<tr><td><strong>Generated clips</strong></td><td>Preview and publish to TikTok</td><td>Local disk (data/clips/)</td><td>TikTok only (when you publish)</td></tr>
+<tr><td><strong>TikTok OAuth tokens</strong></td><td>Authenticate with TikTok API for publishing</td><td>Local disk (data/tiktok_tokens.json)</td><td>No</td></tr>
+<tr><td><strong>TikTok API keys</strong></td><td>Connect to TikTok Content Posting API</td><td>Local config (data/config.json)</td><td>No</td></tr>
+<tr><td><strong>AI models</strong><br>(Whisper, opus-mt)</td><td>Speech-to-text and French translation</td><td>Local cache (data/models/)</td><td>No</td></tr>
+</tbody>
+</table>
+
+<h2>3. External Services</h2>
+<p>The Service communicates with:</p>
+<ul>
+<li><strong>YouTube (yt-dlp)</strong> — to download trending video metadata and files. YouTube's own privacy policy applies to data sent during this process.</li>
+<li><strong>Hugging Face Hub</strong> — to download AI translation models on first use (~130 MB). No personal data is sent; only model file requests.</li>
+<li><strong>TikTok API</strong> — to publish clips you authorize. Data sent includes the video file and caption. This only happens when you explicitly click "Publish".</li>
+</ul>
+
+<h2>4. Data Retention</h2>
+<p>All data is stored locally on your machine. You can delete all data at any time using the "Cleanup" button in Settings, or manually delete the <code>data/</code> folder.</p>
+
+<h2>5. No Analytics or Tracking</h2>
+<div class="highlight">
+The Service does <strong>not</strong> include any analytics, tracking, telemetry, or advertising. No data is collected about your usage patterns.
+</div>
+
+<h2>6. Third-Party Services</h2>
+<p>This Service is not affiliated with, endorsed by, or connected to YouTube, TikTok, or their parent companies beyond the official API integrations described above.</p>
+
+<h2>7. Children's Privacy</h2>
+<p>The Service is not directed to individuals under 13 (or the applicable age in your jurisdiction). We do not knowingly collect data from children.</p>
+
+<h2>8. Changes to This Policy</h2>
+<p>We may update this policy. Changes will be reflected on this page with an updated date.</p>
+
+<h2>9. Contact</h2>
+<p>For privacy-related questions: <strong>tiktokclipper@proton.me</strong></p>
+
+<p style="margin-top:40px;color:#555">Last updated: August 2026</p>
+</div>
+<footer>TikTok Clipper &copy; 2026 — All rights reserved</footer>
+</body>
+</html>
