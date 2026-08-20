@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Clipper - Automated Video Publishing</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#0a0a0f;color:#e0e0e0;line-height:1.7}
+.hero{background:linear-gradient(135deg,#0a0a1a 0%,#1a0a2e 30%,#0a1a2e 70%,#0a0a1a 100%);padding:100px 20px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(37,244,238,0.05),transparent 50%),radial-gradient(circle at 70% 50%,rgba(255,45,85,0.05),transparent 50%);animation:pulse 8s infinite}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+.badge{display:inline-block;background:linear-gradient(135deg,#ff2d55,#ff6b8a);color:#fff;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:56px;font-weight:800;background:linear-gradient(135deg,#25f4ee,#ff2d55);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px;line-height:1.1}
+.hero p{color:#888;font-size:18px;max-width:600px;margin:0 auto 30px}
+.hero-btn{display:inline-block;background:linear-gradient(135deg,#25f4ee,#1ec8c4);color:#000;padding:14px 36px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.hero-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,244,238,0.3)}
+section{max-width:1000px;margin:0 auto;padding:80px 24px}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{font-size:36px;font-weight:800;color:#fff;margin-bottom:12px}
+.section-title p{color:#888;font-size:16px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.feature{background:linear-gradient(145deg,#12121f,#16162a);border:1px solid #1e1e35;border-radius:16px;padding:32px;transition:transform .2s,border-color .2s}
+.feature:hover{transform:translateY(-4px);border-color:#25f4ee}
+.feature .icon{font-size:40px;margin-bottom:16px}
+.feature h3{font-size:18px;color:#fff;margin-bottom:8px}
+.feature p{color:#888;font-size:14px}
+.flow{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:40px 0}
+.flow-step{background:#16162a;border:1px solid #1e1e35;border-radius:12px;padding:16px 24px;text-align:center;min-width:140px}
+.flow-step .num{font-size:24px;font-weight:800;color:#25f4ee;margin-bottom:4px}
+.flow-step .label{font-size:13px;color:#888}
+.flow-arrow{color:#ff2d55;font-size:24px}
+.tech{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:40px}
+.tech-item{background:#12121f;border:1px solid #1e1e35;border-radius:10px;padding:20px;text-align:center}
+.tech-item .name{font-weight:700;color:#25f4ee;font-size:14px}
+.tech-item .desc{color:#666;font-size:12px;margin-top:4px}
+.cta{background:linear-gradient(135deg,#1a0a2e,#0a1a2e);border-radius:20px;padding:60px;text-align:center;margin:0 24px}
+.cta h2{font-size:32px;color:#fff;margin-bottom:12px}
+.cta p{color:#888;margin-bottom:24px}
+footer{text-align:center;padding:50px 20px;color:#444;font-size:13px;border-top:1px solid #1a1a2a}
+footer a{color:#25f4ee;text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<span class="badge">Content Posting API Integration</span>
+<h1>TikTok Clipper</h1>
+<p>Automatically detect the best moments in YouTube videos, generate clips with French subtitles, and publish directly to TikTok.</p>
+<a href="#features" class="hero-btn">Discover the App</a>
+</div>
+
+<section id="features">
+<div class="section-title">
+<h2>What TikTok Clipper Does</h2>
+<p>A fully automated pipeline from YouTube trending to TikTok publishing</p>
+</div>
+<div class="features">
+<div class="feature">
+<div class="icon">🔍</div>
+<h3>Trend Scanner</h3>
+<p>Scans trending videos on YouTube across France, USA, and United Kingdom. Monitors 22+ popular YouTubers including MrBeast, Squeezie, Sidemen, and more.</p>
+</div>
+<div class="feature">
+<div class="icon">🧠</div>
+<h3>AI Highlight Detection</h3>
+<p>Uses OpenAI Whisper for speech transcription and a custom scoring algorithm that detects exclamations, laughter, loud peaks, and emotional keywords in English and French.</p>
+</div>
+<div class="feature">
+<div class="icon">✂️</div>
+<h3>Smart Clip Cutting</h3>
+<p>Automatically cuts the 3 best moments from each video (configurable duration) in 9:16 vertical format (1080×1920), optimized for TikTok.</p>
+</div>
+<div class="feature">
+<div class="icon">🇫🇷</div>
+<h3>French Subtitles</h3>
+<p>Burns subtitles directly into each clip with automatic English-to-French translation using a local ONNX MarianMT model. No cloud API needed.</p>
+</div>
+<div class="feature">
+<div class="icon">📝</div>
+<h3>Smart Captions & Hashtags</h3>
+<p>Auto-generates engaging French captions and relevant hashtags (#PourToi #FYP #Viral) based on video content, channel name, and trending tags.</p>
+</div>
+<div class="feature">
+<div class="icon">🚀</div>
+<h3>One-Click TikTok Publishing</h3>
+<p>Directly publishes clips to TikTok via the official Content Posting API with OAuth2 PKCE authentication. Supports public, friends-only, or private visibility.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="section-title">
+<h2>How It Works</h2>
+<p>End-to-end automated flow in 4 steps</p>
+</div>
+<div class="flow">
+<div class="flow-step"><div class="num">1</div><div class="label">Scan<br>Trending</div></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><div class="num">2</div><div class="label">AI Detect<br>Highlights</div></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><div class="num">3</div><div class="label">Cut +<br>Subtitles</div></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><div class="num">4</div><div class="label">Publish to<br>TikTok</div></div>
+</div>
+</section>
+
+<section>
+<div class="section-title">
+<h2>Technology Stack</h2>
+<p>Built with proven, reliable technologies</p>
+</div>
+<div class="tech">
+<div class="tech-item"><div class="name">FastAPI</div><div class="desc">Python web backend</div></div>
+<div class="tech-item"><div class="name">yt-dlp</div><div class="desc">YouTube video download</div></div>
+<div class="tech-item"><div class="name">Faster-Whisper</div><div class="desc">Local speech-to-text (CTranslate2)</div></div>
+<div class="tech-item"><div class="name">ONNX Runtime</div><div class="desc">EN→FR translation (MarianMT)</div></div>
+<div class="tech-item"><div class="name">FFmpeg</div><div class="desc">Video processing & subtitle burn-in</div></div>
+<div class="tech-item"><div class="name">TikTok API</div><div class="desc">OAuth2 PKCE + Direct Post</div></div>
+</div>
+</section>
+
+<section>
+<div class="cta">
+<h2>100% Local & Private</h2>
+<p>All processing happens on your machine. No videos leave your computer until you choose to publish. No tracking, no analytics, no data collection.</p>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2026 TikTok Clipper — All rights reserved</p>
+<p style="margin-top:8px"><a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+</body>
+</html>
